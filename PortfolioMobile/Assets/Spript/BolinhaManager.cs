@@ -5,6 +5,7 @@ using UnityEngine;
 public class BolinhaManager : MonoBehaviour
 {
     public Rigidbody2D rb;
+    public float x;
 
     public bool iniciou;
 
@@ -23,11 +24,11 @@ public class BolinhaManager : MonoBehaviour
     {
         if (collision.collider.tag.Equals("esquerda") && iniciou)
         {
-            rb.AddForce(new Vector2(-5, 5), ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(-5, x), ForceMode2D.Impulse);
         } 
         else if (collision.collider.tag.Equals("direita") && iniciou)
         {
-            rb.AddForce(new Vector2(5, 5), ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(5, x), ForceMode2D.Impulse);
         }
     }
 }
